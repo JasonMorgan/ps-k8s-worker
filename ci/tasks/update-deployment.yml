@@ -1,0 +1,19 @@
+---
+platform: linux
+image_resource:
+  type: docker-image
+  source:
+    repository: jasonmorgan/pipelineworker
+params:
+  DEPLOYMENT:
+  IMAGE_NAME:
+inputs:
+- name: cluster-repo
+- name: source
+- name: bump
+outputs:
+- name: out
+run:
+  path: /opt/microsoft/powershell/6.0.2/pwsh
+  args: 
+  - source/ci/tasks/update-deployment.ps1
