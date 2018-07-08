@@ -26,7 +26,7 @@ resources: # This is where we define the resources are pipeline will work with. 
   source:
     driver: git
     branch: master
-    uri: https://github.com/JasonMorgan/planespotter-frontend.git
+    uri: https://github.com/JasonMorgan/ps-k8s-worker.git
     file: ci/metadata/tag
     username: ((git.username))
     password: ((git.password))
