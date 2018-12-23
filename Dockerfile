@@ -1,7 +1,7 @@
 FROM microsoft/powershell
 COPY pks /usr/local/bin
 RUN apt-get update; \
-  apt-get update && apt-get install -y apt-transport-https jq ruby g++ make ruby-dev git; \
+  apt-get update && apt-get install -y curl apt-transport-https jq ruby g++ make ruby-dev git; \
   gem install cf-uaac; \
   curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -; \
   touch /etc/apt/sources.list.d/kubernetes.list; \

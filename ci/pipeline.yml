@@ -38,13 +38,13 @@ resources: # This is where we define the resources are pipeline will work with. 
     username: ((harbor.username))
     password: ((harbor.password))
     skip_pull: true
-    repository: harbor.gcp.59s.io:443/59s/ps-k8s-worker
-    harbor_host: harbor.gcp.59s.io
-    harbor_image: harbor.gcp.59s.io/59s/ps-k8s-worker
+    repository: harbor.aws.59s.io:443/59s/ps-k8s-worker
+    harbor_host: harbor.aws.59s.io
+    harbor_image: harbor.aws.59s.io/59s/ps-k8s-worker
     harbor_trigger_scan: false
     harbor_scan_thresholds:  [{"severity": 1,"count": 20},{"severity": 2,"count": 20}]
     notary_enable: false
-    insecure_registries: ["harbor.gcp.59s.io:443"]
+    insecure_registries: ["harbor.aws.59s.io:443"]
 
 jobs: #  We're breaking with out into 2 jobs so that we can have 2 tags associated with our image.
 - name: build-docker-image-tagged # Builds the tagged version of our image and increments the version number in github.
